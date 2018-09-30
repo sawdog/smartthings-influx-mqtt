@@ -21,8 +21,7 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
 metadata {
-    definition (name: "MQQTBridge", namespace: "sawdog", author: "Andrew Sawyers") {
-        capability "Bridge"
+    definition (name: "mqttbridge", namespace: "sawdog", author: "Andrew Sawyers") {
         capability "Notification"
     }
 
