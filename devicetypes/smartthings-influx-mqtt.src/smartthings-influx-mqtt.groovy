@@ -21,7 +21,7 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
 metadata {
-    definition (name: "mqttbridge", namespace: "sawdog", author: "Andrew Sawyers") {
+    definition (name: "Smartthings Influx MQTT", namespace: "sawdog", author: "Andrew Sawyers") {
         capability "Notification"
     }
 

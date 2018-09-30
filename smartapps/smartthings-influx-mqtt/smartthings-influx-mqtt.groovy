@@ -427,7 +427,7 @@ import groovy.transform.Field
 ]
 
 definition(
-    name: "MQTTBridge",
+    name: "Smartthings Influx MQTT",
     namespace: "sawdog",
     author: "Andrew Sawyers",
     description: "An HTTP JSON bridge between SmartThings to RabbitMQ MQTT",
