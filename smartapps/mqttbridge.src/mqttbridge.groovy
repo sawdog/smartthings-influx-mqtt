@@ -427,10 +427,10 @@ import groovy.transform.Field
 ]
 
 definition(
-    name: "Smartthings - MQTT Bridge",
+    name: "MQTTBridge",
     namespace: "sawdog",
     author: "Andrew Sawyers",
-    description: "An HTTP JSON  bridge between SmartThings to RabbitMQ MQTT",
+    description: "An HTTP JSON bridge between SmartThings to RabbitMQ MQTT",
     category: "My Apps",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Connections/Cat-Connections.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Connections/Cat-Connections@2x.png",
