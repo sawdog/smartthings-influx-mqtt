@@ -90,7 +90,7 @@ def deviceNotification(message) {
     def slurper = new JsonSlurper()
     def parsed = slurper.parseText(message)
     
-    if (parsed.path == '/subscribe') {
+    if (parsed.path == '/smartthings/subscribe') {
         parsed.body.callback = device.hub.getDataValue("localIP") + ":" + device.hub.getDataValue("localSrvPortTCP")
     }
 
