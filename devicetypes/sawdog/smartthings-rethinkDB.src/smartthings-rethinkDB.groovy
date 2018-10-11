@@ -21,26 +21,26 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
 metadata {
-    definition (name: "Smartthings Influx MQTT", namespace: "sawdog", author: "Andrew Sawyers") {
+    definition (name: "Smartthings RethinkDB Bridge Device", namespace: "sawdog", author: "Andrew Sawyers") {
         capability "Notification"
     }
 
     preferences {
         input("ip", "string",
-            title: "IP Address",
-            description: "HTTP - MQTT Bridge IP Address",
+            title: "Bridge IP",
+            description: "HTTP - Bridge IP Address",
             required: true,
             displayDuringSetup: true
         )
         input("port", "string",
             title: "Port",
-            description: "HTTP - MQTT Bridge Port",
+            description: "HTTP - Bridge Port",
             required: true,
             displayDuringSetup: true
         )
         input("mac", "string",
             title: "MAC Address",
-            description: "HTTP - MQTT Bridge MAC Address",
+            description: "HTTP - Bridge MAC Address",
             required: true,
             displayDuringSetup: true
         )

@@ -427,10 +427,10 @@ import groovy.transform.Field
 ]
 
 definition(
-    name: "Smartthings Influx MQTT",
+    name: "Smartthings rethinkDB Bridge",
     namespace: "sawdog",
     author: "Andrew Sawyers",
-    description: "An HTTP JSON bridge between SmartThings to RabbitMQ MQTT",
+    description: "An HTTP JSON bridge between SmartThings and rethinkDB",
     category: "My Apps",
     iconUrl: "https://s3.amazonaws.com/smartapp-icons/Connections/Cat-Connections.png",
     iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Connections/Cat-Connections@2x.png",
@@ -509,7 +509,7 @@ def updateSubscription() {
         }
     }
     def json = new groovy.json.JsonOutput().toJson([
-        path: "/subscribe",
+        path: "/smartthings/subscribe",
         body: [
             devices: attributes
         ]
@@ -520,6 +520,7 @@ def updateSubscription() {
     bridge.deviceNotification(json)
 }
 
+// XXX not implemented on bridge side at present.
 // Receive an event from the bridge
 def bridgeHandler(evt) {
     def json = new JsonSlurper().parseText(evt.value)
@@ -573,11 +574,20 @@ def inputHandler(evt) {
     }
     else {
         def json = new JsonOutput().toJson([
-            path: "/push",
+            path: "/smarttings/events",
             body: [
                 name: evt.displayName,
                 value: evt.value,
-                type: evt.name
+                type: evt.name,
+                device: evt.device,
+                deviceId: evt.deviceId,
+                description: evt.descriptionText,
+                eventName: evt.name,
+                eventTime: evt.isoDate,
+                unit: evt.unit,
+                stateChange: evt.isStateChange(),
+                source: evt.source,
+                hubId: evt.hubId,
             ]
         ])
 
