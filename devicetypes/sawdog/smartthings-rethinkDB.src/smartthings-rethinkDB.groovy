@@ -21,7 +21,7 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 
 metadata {
-    definition (name: "Smartthings RethinkDB Bridge Device", namespace: "sawdog", author: "Andrew Sawyers") {
+    definition (name: "Smartthings RethinkDB", namespace: "sawdog", author: "Andrew Sawyers") {
         capability "Notification"
     }
 
