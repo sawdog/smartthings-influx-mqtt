@@ -574,7 +574,7 @@ def inputHandler(evt) {
     }
     else {
         def json = new JsonOutput().toJson([
-            path: "/smarttings/events",
+            path: "/smartthings/events",
             body: [
                 name: evt.displayName,
                 value: evt.value,
