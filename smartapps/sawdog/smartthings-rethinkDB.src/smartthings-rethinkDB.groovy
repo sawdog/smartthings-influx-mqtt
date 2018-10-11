@@ -427,7 +427,7 @@ import groovy.transform.Field
 ]
 
 definition(
-    name: "Smartthings rethinkDB Bridge",
+    name: "Smartthings rethinkDB",
     namespace: "sawdog",
     author: "Andrew Sawyers",
     description: "An HTTP JSON bridge between SmartThings and rethinkDB",
